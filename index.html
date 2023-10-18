@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>욕심</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+        }
+
+        #square {
+            margin: auto;
+            float: right;
+            width: 200px;
+            height: 200px;
+            background-image: url('bubblemove.gif');
+            background-size: cover;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        #textBox {
+            font-family: 'Song Myung', serif;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            margin: 0;
+            width: 700px;
+            color: white;
+            word-break: keep-all;
+        }
+    </style>
+</head>
+<body>
+    <div id="square"></div>
+    <div id="textBox"></div>
+    <script>
+
+        alert("버블을 꾹 눌러주세요");
+
+        var square = document.getElementById('square');
+        var textBox = document.getElementById('textBox');
+        var growing = false;
+
+        function startGrowing() {
+            growing = true;
+            grow();
+        }
+
+        function stopGrowing() {
+            growing = false;
+        }
+
+        function appearWord() {
+            var currentWidth = square.offsetWidth;
+            var currentHeight = square.offsetHeight;
+
+            if (currentWidth > 230 && currentHeight > 230){
+                textBox.innerHTML = "이솝 우화, 욕심 많은 강아지" + "<br>";
+            }
+            if (currentWidth > 290 && currentHeight > 290){
+                textBox.innerHTML += "<br>" + "운 좋은 날이었어요. 시내를 어슬렁거리던 떠돌이 강아지가 푸줏간 쓰레기통에서 큼직한 살코기 한 점을 발견했지 뭐예요. 강아지는 고깃덩어리를 콱 물고서 정신없이 숲으로 내달렸어요. 푸줏간 주인이 아니더라도, 고깃덩어리를 보고 달려들 경쟁자는 얼마든지 많았으니까요." + "<br>";
+            }
+            if (currentWidth > 340 && currentHeight > 340){
+                textBox.innerHTML += "<br>" + "한참을 달리니까 숨이 차고 몸에 열이 올라 죽을 맛이었어요. 입이 자유로워야 혀를 쭉 빼물고 헉헉거려 몸을 좀 식힐 텐데, 그럴 수도 없는 노릇이지요. 그래도 참을 수 있었어요." + "<br>";
+            }
+            if (currentWidth > 400 && currentHeight > 400){
+                textBox.innerHTML += "<br>" + "‘조금만 더 가면 돼. 맛있는 살코기를 먹으려면 이 정도 고생은 참아내야지.’ " + "<br>";
+            }
+            if (currentWidth > 460 && currentHeight > 460){
+                textBox.innerHTML += "<br>" + "고기 생각을 하니 기운이 절로 났어요. 저 앞에 개울과 그 위를 가로지르는 나무다리가 보였어요. 거리를 지나 길모퉁이만 돌면 즐겨찾는 숲이 나타납니다." + "<br>";
+            }
+            if (currentWidth > 520 && currentHeight > 520){
+                textBox.innerHTML += "<br>" + "다리 위에 올라섰어요. 졸졸 맑은 물 흐르는 소리가 귀를 파고들었어요. 목이 말랐어요. 마시지는 못해도 눈이라도 즐거우면 그것도 괜찮겠다 싶었지요. 강아지가 다리 위에 우뚝 멈추어섰어요. 고개를 삐죽 내밀어 개울물을 내려다보았어요. 시원했어요." + "<br>";
+            }
+            if (currentWidth > 580 && currentHeight > 580){
+                textBox.innerHTML += "<br>" + "이런, 이게 웬일이에요? 물속에 웬 강아지가 저처럼 고깃덩어리를 물고 서있었어요. 강아지가 눈에 불을 켰어요. 고깃덩어리가 제 것보다 두 배는 더 커보이지 뭐에요." + "<br>";
+            }
+            if (currentWidth > 640 && currentHeight > 640){
+                textBox.innerHTML += "<br>" + "‘어라, 훨씬 더 크잖아! 저것을 빼앗아야겠다. 뭐 좋은 수가 없을까? 저놈은 겁쟁이처럼 보이네. 슬쩍 겁을 주면 고기를 내던지고 달아날 거야!’" + "<br>";
+            }
+            if (currentWidth > 700 && currentHeight > 700){
+                textBox.innerHTML += "<br>" + "강아지가 이빨을 드러내 보이며 으르렁거렸어요. 그러다가 큰 소리로 컹컹 짖었지요. 아차, 컹컹 짖으려면 입을 벌릴 수밖에 없어요!" + "<br>";
+            }
+            if (currentWidth > 760 && currentHeight > 760){
+                textBox.innerHTML += "<br>" + "입에서 달아난 고깃덩어리가 물속에 풍덩 빠져버렸지요. 그와 동시에 물속에 있던 강아지 입에서도 고깃덩어리가 사라졌어요." + "<br>";
+            }
+            if (currentWidth > 820 && currentHeight > 820){
+                textBox.innerHTML += "<br>" + "강아지는 물 속 강아지가 자신의 그림자인줄을 몰랐던 거에요." + "<br>";
+            }
+        }
+
+        function grow() {
+            if (growing) {
+                var currentWidth = square.offsetWidth;
+                var currentHeight = square.offsetHeight;
+
+                square.style.width = (currentWidth + 30) + 'px';
+                square.style.height = (currentHeight + 30) + 'px';
+
+                appearWord();
+
+                requestAnimationFrame(grow);
+            }
+        }
+
+        function hideEnough() {
+            var audio = new Audio('pop.mp3');
+            var currentWidth = square.offsetWidth;
+            var currentHeight = square.offsetHeight;
+
+            if (currentWidth > 822 && currentHeight > 822) {
+                square.style.display = 'none';
+                audio.play();
+            } else {
+                requestAnimationFrame(hideEnough);
+            }
+        }
+        square.addEventListener('mousedown', startGrowing);
+        square.addEventListener('mouseup', stopGrowing);
+        square.addEventListener('mouseleave', stopGrowing);
+
+        hideEnough();
+        // appearWord();
+    </script>
+</body>
+</html>
